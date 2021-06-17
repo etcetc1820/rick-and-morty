@@ -5,11 +5,10 @@ class CharacterRepository {
   getAllCharacters = async (): Promise<void> => {
     const url =
       constants.schema +
-      constants.domain +
+      process.env.REACT_APP_DOMAIN +
       constants.base +
       constants.characters;
-    const result = await instance.get(url);
-    console.log(result);
+    await instance.get(url);
   };
 }
 

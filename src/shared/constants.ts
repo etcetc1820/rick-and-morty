@@ -1,6 +1,6 @@
 const constants = {
   schema: "https://",
-  domain: "rickandmortyapi.com",
+  domain: process.env.REACT_APP_DOMAIN || "rickandmortyapi.com",
   base: "/api",
   characters: "/character",
 };
