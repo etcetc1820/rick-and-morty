@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import CharacterRepository from "../../api/Characters/CharacterRepository";
+import React from "react";
+import { useAppSelector } from "../../store/storeHooks";
+import { getCharacters } from "./characters.selectors";
 
 const Characters = (): JSX.Element => {
-  useEffect(() => {
-    CharacterRepository.getAllCharacters();
-  }, []);
+  const characters = useAppSelector(getCharacters);
+  console.log(characters);
 
   return <div>hahahaha</div>;
 };
