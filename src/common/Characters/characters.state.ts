@@ -1,5 +1,5 @@
-import Character from "../../api/Characters/CharacterResource";
+import { CharacterSchema } from "../../api/Characters/CharacterSchema";
 
 export interface CharactersState {
-  characters: Character[];
+  characters: CharacterSchema[];
 }

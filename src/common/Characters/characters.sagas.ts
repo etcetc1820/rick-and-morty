@@ -1,7 +1,7 @@
 import { call, put, all, takeLatest } from "redux-saga/effects";
 import { SagaIterator } from "@redux-saga/types";
 import CharacterRepository from "../../api/Characters/CharacterRepository";
-import { charactersActions } from "./characters.slice";
+import { charactersActions } from "./characters.actions";
 
 function* watchGetCharacters(): SagaIterator {
   try {
@@ -15,6 +15,6 @@ function* watchGetCharacters(): SagaIterator {
 
 export default function* charactersWatchers(): SagaIterator {
   yield all([
-    takeLatest(charactersActions.setCharacters.type, watchGetCharacters),
+    takeLatest(charactersActions.getCharacters.type, watchGetCharacters),
   ]);
 }

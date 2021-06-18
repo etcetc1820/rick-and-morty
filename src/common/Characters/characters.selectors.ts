@@ -1,6 +1,6 @@
 import { AppState } from "../../store/storeStates";
-import Character from "../../api/Characters/CharacterResource";
+import { CharacterSchema } from "../../api/Characters/CharacterSchema";
 
 export const getCharacters = ({
   charactersReducer: { characters },
-}: AppState): Character[] => characters;
+}: AppState): CharacterSchema[] => characters;

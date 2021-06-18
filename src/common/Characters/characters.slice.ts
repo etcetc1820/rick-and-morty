@@ -1,21 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Character from "../../api/Characters/CharacterResource";
 import { CharactersState } from "./characters.state";
+import { SliceNames } from "../../store/sliceNames";
+import { CharacterSchema } from "../../api/Characters/CharacterSchema";
 
 const initialState: CharactersState = {
   characters: [],
 };
 
-const charactersSlice = createSlice({
-  name: "charactersReducer",
+export const charactersSlice = createSlice({
+  name: SliceNames.CHARACTER_REDUCER,
   initialState,
   reducers: {
-    setCharacters(state, action: PayloadAction<Character[]>) {
+    setCharacters(state, action: PayloadAction<CharacterSchema[]>) {
       state.characters = [...action.payload];
     },
   },
 });
-
-export const charactersActions = charactersSlice.actions;
 
 export const charactersReducer = charactersSlice.reducer;
