@@ -1,6 +1,6 @@
 import React from "react";
-import { StatusType } from "../types";
 
+import { StatusType } from "../types";
 import "./select.scss";
 
 interface SelectProps {
