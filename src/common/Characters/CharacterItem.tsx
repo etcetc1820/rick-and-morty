@@ -1,4 +1,5 @@
 import React from "react";
+
 import { CharacterSchema } from "../../api/Characters/CharacterSchema";
 
 interface CharacterItemProps {

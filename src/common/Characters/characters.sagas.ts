@@ -1,15 +1,23 @@
-import { call, put, all, takeLatest } from "redux-saga/effects";
+import { call, put, all, takeLatest, delay } from "redux-saga/effects";
 import { SagaIterator } from "@redux-saga/types";
+
 import CharacterRepository from "../../api/Characters/CharacterRepository";
 import { charactersActions } from "./characters.actions";
 
 function* watchGetCharacters(): SagaIterator {
   try {
+    yield put(charactersActions.setIsLoading(true));
+    yield delay(1000);
+
     const characters = yield call(CharacterRepository.getAllCharacters);
 
     yield put(charactersActions.setCharacters(characters));
   } catch (e) {
-    console.log(e);
+    yield put(
+      charactersActions.getCharactersFailed(
+        e?.message || "Something went wrong"
+      )
+    );
   }
 }
 

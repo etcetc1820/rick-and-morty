@@ -1,5 +1,7 @@
 import { charactersReducer } from "../common/Characters/characters.slice";
 
-export default {
+const rootReducer = {
   charactersReducer,
 };
+
+export default rootReducer;
