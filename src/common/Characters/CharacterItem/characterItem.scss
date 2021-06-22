@@ -1,0 +1,15 @@
+.characterItemWrapper {
+  max-width: 400px;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.characterImage {
+  margin: 0 auto 10px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

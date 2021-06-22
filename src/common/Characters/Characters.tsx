@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
+
 import {
   getCharacters,
   getErrorMessage,
   getIsLoading,
 } from "./characters.selectors";
-
 import { useAppDispatch, useAppSelector } from "../../store/storeHooks";
 import { charactersActions } from "./characters.actions";
-import CharacterItem from "./CharacterItem";
+import CharacterItem from "./CharacterItem/CharacterItem";
+import Loader from "../../shared/Loader/Loader";
 
 const Characters = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -20,11 +21,11 @@ const Characters = (): JSX.Element => {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (errorMessage.length) {
-    return <p>{errorMessage}</p>;
+    return <p style={{ textAlign: "center" }}>{errorMessage}</p>;
   }
 
   return (
