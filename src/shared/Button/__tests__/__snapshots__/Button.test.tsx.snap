@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button button with text 1`] = `
+<button>
+  Hopa
+</button>
+`;
+
+exports[`Button button with text and function 1`] = `
+<button
+  onClick={[Function]}
+>
+  Hopa
+</button>
+`;
+
+exports[`Button button without text 1`] = `<button />`;

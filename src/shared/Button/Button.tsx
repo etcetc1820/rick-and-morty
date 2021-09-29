@@ -4,11 +4,19 @@ import "./buttons.scss";
 
 interface ButtonProps {
   disabled?: boolean;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, ...props }): JSX.Element => {
-  return <button {...props}>{children}</button>;
+const Button: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+  ...props
+}): JSX.Element => {
+  return (
+    <button {...props} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

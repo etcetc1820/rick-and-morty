@@ -1,14 +1,14 @@
-import { AppState } from "../../store/storeStates";
 import { CharacterSchema } from "../../api/Characters/CharacterSchema";
+import { GetFromState } from "../../shared/types";
 
-export const getCharacters = ({
+export const getCharacters: GetFromState<CharacterSchema[]> = ({
   charactersReducer: { characters },
-}: AppState): CharacterSchema[] => characters;
+}) => characters;
 
-export const getErrorMessage = ({
+export const getErrorMessage: GetFromState<string> = ({
   charactersReducer: { errorMessage },
-}: AppState): string => errorMessage;
+}) => errorMessage;
 
-export const getIsLoading = ({
+export const getIsLoading: GetFromState<boolean> = ({
   charactersReducer: { isLoading },
-}: AppState): boolean => isLoading;
+}) => isLoading;

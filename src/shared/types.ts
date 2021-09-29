@@ -1,3 +1,5 @@
+import { AppState } from "../store/storeStates";
+
 export interface StatusType {
   id: number;
   value: string;
@@ -9,3 +11,5 @@ export enum CharactersSearchParams {
 }
 
 export type FormValuesTypes = { [key in CharactersSearchParams]: string };
+
+export type GetFromState<T> = (state: AppState) => T;
